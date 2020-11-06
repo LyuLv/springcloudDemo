@@ -7,9 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springcloudDemo" />
+        <module name="springboot-seckill" />
         <module name="spingboot-redis" />
-        <module name="springboot-jwt" />
         <module name="eureka" />
+        <module name="springboot-jwt" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
       <module name="eureka" options="-parameters" />
       <module name="spingboot-redis" options="-parameters" />
       <module name="springboot-jwt" options="-parameters" />
+      <module name="springboot-seckill" options="-parameters" />
       <module name="springbootredisDemo" options="-parameters" />
     </option>
   </component>

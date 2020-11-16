@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demo
+  profiles:
+    active: local
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-2ze513dq8035yjp49ro.mysql.rds.aliyuncs.com:3306/lyu_mysql
+      username: aliyun_lyu
+      password: lvshaoqing@123
+
+#mybati自动生成代码
+mybatis:
+  #映射路径
+  mapper-locations: classpath:mapper/*.xml
+  #sql对应的实体
+  type-aliases-package: com.lyu.excute.easy.entity

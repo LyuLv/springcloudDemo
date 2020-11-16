@@ -1,7 +1,7 @@
 package com.lyu.seckill.config;
 
-import com.lyu.point.demo.dao.GoodsStockMapper;
-import com.lyu.point.demo.entity.GoodsStock;
+import com.lyu.seckill.dao.GoodsStockMapper;
+import com.lyu.seckill.entity.GoodsStock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

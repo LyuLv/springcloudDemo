@@ -1,6 +1,6 @@
 package com.lyu.seckill.dao;
 
-import com.lyu.point.demo.entity.GoodsStock;
+import com.lyu.seckill.entity.GoodsStock;
 
 import java.util.List;
 

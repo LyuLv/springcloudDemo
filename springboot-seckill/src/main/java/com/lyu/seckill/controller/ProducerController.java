@@ -1,7 +1,7 @@
 package com.lyu.seckill.controller;
 
-import com.lyu.point.demo.config.RabbitMQConfig;
-import com.lyu.point.demo.entity.OrderList;
+import com.lyu.seckill.config.RabbitMQConfig;
+import com.lyu.seckill.entity.OrderList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

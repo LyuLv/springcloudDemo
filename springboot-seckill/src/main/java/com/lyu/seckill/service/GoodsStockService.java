@@ -1,8 +1,8 @@
 package com.lyu.seckill.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lyu.point.demo.dao.GoodsStockMapper;
-import com.lyu.point.demo.entity.GoodsStock;
+import com.lyu.seckill.dao.GoodsStockMapper;
+import com.lyu.seckill.entity.GoodsStock;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

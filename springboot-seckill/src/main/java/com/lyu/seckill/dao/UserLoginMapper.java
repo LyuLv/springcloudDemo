@@ -1,7 +1,6 @@
 package com.lyu.seckill.dao;
 
-import com.lyu.point.demo.entity.UserLogin;
-import org.apache.ibatis.annotations.Mapper;
+import com.lyu.seckill.entity.UserLogin;
 
 import java.util.List;
 

@@ -37,6 +37,10 @@ public class ServiceTest {
     @Scheduled(cron = "0 0/20 * * * ?")
     public void surplus() {
         Set<String> set = redisUtils.keys("lyu:1st*");
+        if (set == null || set.isEmpty()) {
+            LOGGER.info("lyu:1st*->key为空");
+            return;
+        }
         set.forEach(s -> {
             LOGGER.info(s + "剩余时间：" + redisUtils.ttl(s) + "秒");
         });

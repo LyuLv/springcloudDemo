@@ -3,9 +3,11 @@ spring:
     name: springboot-redis
 
 server:
-  port: 8082
+  port: 8083
 
 eureka:
+  instance:
+    instance-id: localhost:${server.port}
   client:
     service-url:
       defaultZone: http://localhost:8081/eureka/

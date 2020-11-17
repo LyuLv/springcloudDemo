@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo
+    name: springboot-seckill
   profiles:
     active: local
   datasource:
@@ -13,13 +13,13 @@ spring:
   rabbitmq:
     username: guest
     password: guest
-    host: http://123.56.125.196
+    host: 123.56.125.196
     port: 5672
 
   redis:
     # Redis数据库索引（默认为0）
     database: 0
-    host: http://123.56.125.196
+    host: 123.56.125.196
     port: 6379
     jedis:
       pool:
@@ -32,7 +32,14 @@ spring:
         # 连接池中的最小空闲连接
         min-idle: 0
     # 连接超时时间（毫秒）
-    timeout: 1000
+    timeout: 10000
+
+eureka:
+  instance:
+    instance-id: localhost:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
 
 #mybati自动生成代码
 mybatis:
@@ -40,3 +47,6 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   #sql对应的实体
   type-aliases-package: com.lyu.seckill.entity
+
+server:
+  port: 8085

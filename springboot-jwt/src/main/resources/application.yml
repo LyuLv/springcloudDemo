@@ -3,4 +3,11 @@ spring:
     name: springboot-jwt
 
 server:
-  port: 8081
+  port: 8084
+
+eureka:
+  instance:
+    instance-id: localhost:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/

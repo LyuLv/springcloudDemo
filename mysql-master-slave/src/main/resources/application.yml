@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    master:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/lyu?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useSSL=false&serverTimezone=Asia/Shanghai
+      username: aliyun_lyu
+      password: lvshaoqing@123
+    slave:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/mms?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useSSL=false&serverTimezone=Asia/Shanghai
+      username: aliyun_lyu
+      password: lvshaoqing@123
+
+mybatis:
+  #映射路径
+  mapper-locations: classpath:mapper/*.xml
+  #sql对应的实体
+  type-aliases-package: com.lyu.mms.domain
+

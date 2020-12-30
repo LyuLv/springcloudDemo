@@ -29,6 +29,7 @@
         <module>spingboot-redis</module>
         <module>springboot-jwt</module>
         <module>springboot-seckill</module>
+        <module>mysql-master-slave</module>
     </modules>
 
 <!--    公共依赖-->

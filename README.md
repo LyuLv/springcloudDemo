@@ -4,3 +4,4 @@
 2、SpringBoot+redis
 3、简单秒杀系统
 4、简化Mapper查询简单框架
+5、springboot+mybatis+mysql主从数据源分离

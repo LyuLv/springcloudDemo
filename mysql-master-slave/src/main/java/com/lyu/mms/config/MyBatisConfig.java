@@ -34,7 +34,7 @@ public class MyBatisConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(routingDataSource);
-        //可能出错的问题：sqlSessionFactoryBean.setMapperLocations(resolver.getResources(packageSearchPath))，写错成了getResource
+        //可能出错的问题：sqlSessionFactoryBean.setMapperLocations(resolver.getResources(packageSearchPath))，写错成了getResource导致找不到classpath:mapper/*.xml的错误
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }

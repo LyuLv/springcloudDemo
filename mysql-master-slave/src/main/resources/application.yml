@@ -3,13 +3,13 @@ spring:
     master:
       driver-class-name: com.mysql.cj.jdbc.Driver
       jdbc-url: jdbc:mysql://localhost:3306/lyu?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useSSL=false&serverTimezone=Asia/Shanghai
-      username: aliyun_lyu
-      password: lvshaoqing@123
+      username: root
+      password: root
     slave:
       driver-class-name: com.mysql.cj.jdbc.Driver
       jdbc-url: jdbc:mysql://localhost:3306/mms?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useSSL=false&serverTimezone=Asia/Shanghai
-      username: aliyun_lyu
-      password: lvshaoqing@123
+      username: root
+      password: root
 
 mybatis:
   #Ó³ÉäÂ·¾¶

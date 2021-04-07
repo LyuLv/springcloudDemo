@@ -101,24 +101,127 @@ public class LeetCode {
     }
 
 
+    /**
+     * 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+     * 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+     * 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
+     * 示例 1：
+     * 输入：[7,1,5,3,6,4]
+     * 输出：5
+     * 解释：在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。
+     * @param ints
+     * @return
+     */
+    public static int getMax(int[] ints) {
+        int in, out, max = 0;
+        for (int i = 0; i < ints.length; i++) {
+            for (int j = i + 1; j < ints.length; j++) {
+                in = ints[i];
+                out = ints[j];
+                if (out < in) {
+                    continue;
+                }
+                if (out - in > max) {
+                    max = out - in;
+                }
+            }
+        }
+
+        return max;
+    }
+
+    /**
+     * 【剑指offer】斐波那契数列 --Java实现
+     * 1. 递归法
+     * 1. 分析
+     * 斐波那契数列的标准公式为：F(1)=1，F(2)=1, F(n)=F(n-1)+F(n-2)（n>=3，n∈N*）
+     * 根据公式可以直接写出：
+     *
+     * 2. 代码
+     * public class Solution {
+     *     public int Fibonacci(int n) {
+     *         if(n<=1){
+     *             return n;
+     *         }
+     *         return Fibonacci(n-1) + Fibonacci(n-2);
+     *     }
+     * }
+     * 3. 复杂度
+     * 时间复杂度：
+     * 空间复杂度：
+     *
+     * 2. 优化递归
+     * 1. 分析
+     * 递归会重复计算大量相同数据，我们用个数组把结果存起来8！
+     *
+     * 2. 代码
+     * public class Solution {
+     *     public int Fibonacci(int n) {
+     *         int ans[] = new int[40];
+     *         ans[0] = 0;
+     *         ans[1] = 1;
+     *         for(int i=2;i<=n;i++){
+     *             ans[i] = ans[i-1] + ans[i-2];
+     *         }
+     *         return ans[n];
+     *     }
+     * }
+     * 3. 复杂度：
+     * 时间复杂度：
+     * 空间复杂度：
+     *
+     * 3. 优化存储
+     * 1. 分析
+     * 其实我们可以发现每次就用到了最近的两个数，所以我们可以只存储最近的两个数
+     *
+     * sum 存储第 n 项的值
+     * one 存储第 n-1 项的值
+     * two 存储第 n-2 项的值
+     * 2. 代码
+     * public class Solution {
+     *     public int Fibonacci(int n) {
+     *         if(n == 0){
+     *             return 0;
+     *         }else if(n == 1){
+     *             return 1;
+     *         }
+     *         int sum = 0;
+     *         int two = 0;
+     *         int one = 1;
+     *         for(int i=2;i<=n;i++){
+     *             sum = two + one;
+     *             two = one;
+     *             one = sum;
+     *         }
+     *         return sum;
+     *     }
+     * }
+     */
+
+
 
 
     public static void main(String[] args) {
-        String s = "{[]}";
-        System.out.println(isValid2(s));
+//        String s = "{[]}";
+//        System.out.println(isValid2(s));
+//
+//        Stack stack = new Stack();
+//        stack.push("1");
+//        stack.push("2");
+//
+//        System.out.println(stack.pop());
+//        System.out.println(stack.peek());
+//
+//        System.out.println(stack.size());
+//        System.out.println(stack);
+//
+//        System.out.println("--------------------------");
+//        System.out.println(JumpFloor(10));
 
-        Stack stack = new Stack();
-        stack.push("1");
-        stack.push("2");
 
-        System.out.println(stack.pop());
-        System.out.println(stack.peek());
+        int[] ints = {7,1,5,3,6,7,4};
 
-        System.out.println(stack.size());
-        System.out.println(stack);
-
-        System.out.println("--------------------------");
-        System.out.println(JumpFloor(10));
+        System.out.println(getMax(ints));
 
     }
 
